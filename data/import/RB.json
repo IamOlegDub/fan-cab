@@ -1,0 +1,83 @@
+{
+  "starters": [
+    {
+      "position": "GK",
+      "name": "Yassine Bounou",
+      "country": "MAR"
+    },
+    {
+      "position": "DF",
+      "name": "Joshua Kimmich",
+      "country": "GER"
+    },
+    {
+      "position": "DF",
+      "name": "Nahuel Molina",
+      "country": "ARG"
+    },
+    {
+      "position": "DF",
+      "name": "Denzel Dumfries",
+      "country": "NED"
+    },
+    {
+      "position": "DF",
+      "name": "Jesús Gallardo",
+      "country": "MEX"
+    },
+    {
+      "position": "MF",
+      "name": "Bruno Fernandes",
+      "country": "POR"
+    },
+    {
+      "position": "MF",
+      "name": "Kevin De Bruyne",
+      "country": "BEL"
+    },
+    {
+      "position": "MF",
+      "name": "Franck Kessié",
+      "country": "CIV"
+    },
+    {
+      "position": "FW",
+      "name": "Michael Olise",
+      "country": "FRA"
+    },
+    {
+      "position": "FW",
+      "name": "Harry Kane",
+      "country": "ENG"
+    },
+    {
+      "position": "FW",
+      "name": "Vinícius Júnior",
+      "country": "BRA"
+    }
+  ],
+  "bench": [
+    {
+      "position": "GK",
+      "name": "Gregor Kobel",
+      "country": "SUI"
+    },
+    {
+      "position": "DF",
+      "name": "Marc Cucurella",
+      "country": "ESP"
+    },
+    {
+      "position": "MF",
+      "name": "Luka Modrić",
+      "country": "CRO"
+    },
+    {
+      "position": "MF",
+      "name": "Federico Valverde",
+      "country": "URU"
+    }
+  ],
+  "c1": "Harry Kane",
+  "c2": "Kevin De Bruyne"
+}

@@ -1,0 +1,83 @@
+{
+  "starters": [
+    {
+      "position": "GK",
+      "name": "Emiliano Martínez",
+      "country": "ARG"
+    },
+    {
+      "position": "DF",
+      "name": "Joško Gvardiol",
+      "country": "CRO"
+    },
+    {
+      "position": "DF",
+      "name": "Achraf Hakimi",
+      "country": "MAR"
+    },
+    {
+      "position": "DF",
+      "name": "Virgil van Dijk",
+      "country": "NED"
+    },
+    {
+      "position": "DF",
+      "name": "Manuel Akanji",
+      "country": "SUI"
+    },
+    {
+      "position": "DF",
+      "name": "Brandon Mechele",
+      "country": "BEL"
+    },
+    {
+      "position": "MF",
+      "name": "Pedri",
+      "country": "ESP"
+    },
+    {
+      "position": "MF",
+      "name": "Marcel Sabitzer",
+      "country": "AUT"
+    },
+    {
+      "position": "MF",
+      "name": "Jude Bellingham",
+      "country": "ENG"
+    },
+    {
+      "position": "FW",
+      "name": "Michael Olise",
+      "country": "FRA"
+    },
+    {
+      "position": "FW",
+      "name": "Vinícius Júnior",
+      "country": "BRA"
+    }
+  ],
+  "bench": [
+    {
+      "position": "GK",
+      "name": "Yahia Fofana",
+      "country": "CIV"
+    },
+    {
+      "position": "MF",
+      "name": "Jamal Musiala",
+      "country": "GER"
+    },
+    {
+      "position": "FW",
+      "name": "Erling Haaland",
+      "country": "NOR"
+    },
+    {
+      "position": "MF",
+      "name": "João Neves",
+      "country": "POR"
+    }
+  ],
+  "c1": "Vinícius Júnior",
+  "c2": "Jude Bellingham"
+}

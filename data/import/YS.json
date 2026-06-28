@@ -1,0 +1,83 @@
+{
+  "starters": [
+    {
+      "position": "GK",
+      "name": "Thibaut Courtois",
+      "country": "BEL"
+    },
+    {
+      "position": "DF",
+      "name": "Marquinhos",
+      "country": "BRA"
+    },
+    {
+      "position": "DF",
+      "name": "Marc Cucurella",
+      "country": "ESP"
+    },
+    {
+      "position": "DF",
+      "name": "Joško Gvardiol",
+      "country": "CRO"
+    },
+    {
+      "position": "DF",
+      "name": "Manuel Akanji",
+      "country": "SUI"
+    },
+    {
+      "position": "MF",
+      "name": "Ryan Gravenberch",
+      "country": "NED"
+    },
+    {
+      "position": "MF",
+      "name": "Jamal Musiala",
+      "country": "GER"
+    },
+    {
+      "position": "MF",
+      "name": "Bruno Fernandes",
+      "country": "POR"
+    },
+    {
+      "position": "FW",
+      "name": "Lionel Messi",
+      "country": "ARG"
+    },
+    {
+      "position": "FW",
+      "name": "Harry Kane",
+      "country": "ENG"
+    },
+    {
+      "position": "FW",
+      "name": "Kylian Mbappé",
+      "country": "FRA"
+    }
+  ],
+  "bench": [
+    {
+      "position": "GK",
+      "name": "Édouard Mendy",
+      "country": "SEN"
+    },
+    {
+      "position": "DF",
+      "name": "Daniel Muñoz",
+      "country": "COL"
+    },
+    {
+      "position": "MF",
+      "name": "Rodrigo Bentancur",
+      "country": "URU"
+    },
+    {
+      "position": "MF",
+      "name": "Martin Ødegaard",
+      "country": "NOR"
+    }
+  ],
+  "c1": "Lionel Messi",
+  "c2": "Harry Kane"
+}

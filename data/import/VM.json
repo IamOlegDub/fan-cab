@@ -1,0 +1,83 @@
+{
+  "starters": [
+    {
+      "position": "GK",
+      "name": "Gregor Kobel",
+      "country": "SUI"
+    },
+    {
+      "position": "DF",
+      "name": "Achraf Hakimi",
+      "country": "MAR"
+    },
+    {
+      "position": "DF",
+      "name": "Virgil van Dijk",
+      "country": "NED"
+    },
+    {
+      "position": "DF",
+      "name": "Moussa Niakhaté",
+      "country": "SEN"
+    },
+    {
+      "position": "DF",
+      "name": "Emmanuel Agbadou",
+      "country": "CIV"
+    },
+    {
+      "position": "MF",
+      "name": "Bruno Guimarães",
+      "country": "BRA"
+    },
+    {
+      "position": "MF",
+      "name": "Fabián Ruiz",
+      "country": "ESP"
+    },
+    {
+      "position": "MF",
+      "name": "Bruno Fernandes",
+      "country": "POR"
+    },
+    {
+      "position": "MF",
+      "name": "Kevin De Bruyne",
+      "country": "BEL"
+    },
+    {
+      "position": "FW",
+      "name": "Kylian Mbappé",
+      "country": "FRA"
+    },
+    {
+      "position": "FW",
+      "name": "Harry Kane",
+      "country": "ENG"
+    }
+  ],
+  "bench": [
+    {
+      "position": "GK",
+      "name": "Alexander Schlager",
+      "country": "AUT"
+    },
+    {
+      "position": "MF",
+      "name": "Florian Wirtz",
+      "country": "GER"
+    },
+    {
+      "position": "DF",
+      "name": "Cristian Romero",
+      "country": "ARG"
+    },
+    {
+      "position": "FW",
+      "name": "Erling Haaland",
+      "country": "NOR"
+    }
+  ],
+  "c1": "Harry Kane",
+  "c2": "Kylian Mbappé"
+}

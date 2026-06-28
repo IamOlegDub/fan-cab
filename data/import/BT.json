@@ -1,0 +1,83 @@
+{
+  "starters": [
+    {
+      "position": "GK",
+      "name": "Gregor Kobel",
+      "country": "SUI"
+    },
+    {
+      "position": "DF",
+      "name": "Pau Cubarsí",
+      "country": "ESP"
+    },
+    {
+      "position": "DF",
+      "name": "Joško Gvardiol",
+      "country": "CRO"
+    },
+    {
+      "position": "DF",
+      "name": "Virgil van Dijk",
+      "country": "NED"
+    },
+    {
+      "position": "MF",
+      "name": "Florian Wirtz",
+      "country": "GER"
+    },
+    {
+      "position": "MF",
+      "name": "Bruno Fernandes",
+      "country": "POR"
+    },
+    {
+      "position": "MF",
+      "name": "Kevin De Bruyne",
+      "country": "BEL"
+    },
+    {
+      "position": "MF",
+      "name": "Franck Kessié",
+      "country": "CIV"
+    },
+    {
+      "position": "FW",
+      "name": "Michael Olise",
+      "country": "FRA"
+    },
+    {
+      "position": "FW",
+      "name": "Harry Kane",
+      "country": "ENG"
+    },
+    {
+      "position": "FW",
+      "name": "Lionel Messi",
+      "country": "ARG"
+    }
+  ],
+  "bench": [
+    {
+      "position": "GK",
+      "name": "Ørjan Nyland",
+      "country": "NOR"
+    },
+    {
+      "position": "DF",
+      "name": "Andy Robertson",
+      "country": "SCO"
+    },
+    {
+      "position": "DF",
+      "name": "Gabriel Magalhães",
+      "country": "BRA"
+    },
+    {
+      "position": "MF",
+      "name": "Marcel Sabitzer",
+      "country": "AUT"
+    }
+  ],
+  "c1": "Lionel Messi",
+  "c2": "Harry Kane"
+}

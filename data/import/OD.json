@@ -1,0 +1,83 @@
+{
+    "starters": [
+        {
+            "position": "GK",
+            "name": "Alisson",
+            "country": "BRA"
+        },
+        {
+            "position": "DF",
+            "name": "Marc Cucurella",
+            "country": "ESP"
+        },
+        {
+            "position": "DF",
+            "name": "Achraf Hakimi",
+            "country": "MAR"
+        },
+        {
+            "position": "DF",
+            "name": "Krépin Diatta",
+            "country": "SEN"
+        },
+        {
+            "position": "MF",
+            "name": "Kevin De Bruyne",
+            "country": "BEL"
+        },
+        {
+            "position": "MF",
+            "name": "Jude Bellingham",
+            "country": "ENG"
+        },
+        {
+            "position": "MF",
+            "name": "Franck Kessié",
+            "country": "CIV"
+        },
+        {
+            "position": "MF",
+            "name": "Ryan Gravenberch",
+            "country": "NED"
+        },
+        {
+            "position": "FW",
+            "name": "Lionel Messi",
+            "country": "ARG"
+        },
+        {
+            "position": "FW",
+            "name": "Kylian Mbappé",
+            "country": "FRA"
+        },
+        {
+            "position": "FW",
+            "name": "Erling Haaland",
+            "country": "NOR"
+        }
+    ],
+    "bench": [
+        {
+            "position": "GK",
+            "name": "Gregor Kobel",
+            "country": "SUI"
+        },
+        {
+            "position": "MF",
+            "name": "Bruno Fernandes",
+            "country": "POR"
+        },
+        {
+            "position": "DF",
+            "name": "Joshua Kimmich",
+            "country": "GER"
+        },
+        {
+            "position": "DF",
+            "name": "Daniel Muñoz",
+            "country": "COL"
+        }
+    ],
+    "c1": "Lionel Messi",
+    "c2": "Jude Bellingham"
+}

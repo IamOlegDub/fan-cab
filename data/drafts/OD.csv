@@ -1,0 +1,16 @@
+type,position,name,captain,country
+starter,GK,Alisson,,BRA
+starter,DF,Marc Cucurella,,ESP
+starter,DF,Achraf Hakimi,,MAR
+starter,DF,Krépin Diatta,,SEN
+starter,MF,Kevin De Bruyne,,BEL
+starter,MF,Jude Bellingham,C2,ENG
+starter,MF,Franck Kessié,,CIV
+starter,MF,Ryan Gravenberch,,NED
+starter,FW,Lionel Messi,C1,ARG
+starter,FW,Kylian Mbappé,,FRA
+starter,FW,Erling Haaland,,NOR
+bench,GK,Gregor Kobel,,SUI
+bench,MF,Bruno Fernandes,,POR
+bench,DF,Joshua Kimmich,,GER
+bench,DF,Daniel Muñoz,,COL

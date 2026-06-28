@@ -1,0 +1,23 @@
+{
+    "starters": [
+        { "position": "GK", "name": "Gregor Kobel", "country": "SUI" },
+        { "position": "DF", "name": "Joshua Kimmich", "country": "GER" },
+        { "position": "DF", "name": "Marquinhos", "country": "BRA" },
+        { "position": "DF", "name": "Denzel Dumfries", "country": "NED" },
+        { "position": "DF", "name": "Achraf Hakimi", "country": "MAR" },
+        { "position": "MF", "name": "Youri Tielemans", "country": "BEL" },
+        { "position": "MF", "name": "Jude Bellingham", "country": "ENG" },
+        { "position": "MF", "name": "Lamine Camara", "country": "SEN" },
+        { "position": "FW", "name": "Mikel Oyarzabal", "country": "ESP" },
+        { "position": "FW", "name": "Lionel Messi", "country": "ARG" },
+        { "position": "FW", "name": "Erling Haaland", "country": "NOR" }
+    ],
+    "bench": [
+        { "position": "GK", "name": "Alexander Schlager", "country": "AUT" },
+        { "position": "DF", "name": "Johan Vásquez", "country": "MEX" },
+        { "position": "MF", "name": "Bruno Fernandes", "country": "POR" },
+        { "position": "MF", "name": "Martin Baturina", "country": "CRO" }
+    ],
+    "c1": "Lionel Messi",
+    "c2": "Jude Bellingham"
+}

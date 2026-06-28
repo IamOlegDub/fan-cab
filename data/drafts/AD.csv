@@ -1,0 +1,16 @@
+type,position,name,captain,country
+starter,GK,Gregor Kobel,,SUI
+starter,DF,Joshua Kimmich,,GER
+starter,DF,Marquinhos,,BRA
+starter,DF,Denzel Dumfries,,NED
+starter,DF,Achraf Hakimi,,MAR
+starter,MF,Youri Tielemans,,BEL
+starter,MF,Jude Bellingham,C2,ENG
+starter,MF,Lamine Camara,,SEN
+starter,FW,Mikel Oyarzabal,,ESP
+starter,FW,Lionel Messi,C1,ARG
+starter,FW,Erling Haaland,,NOR
+bench,GK,Alexander Schlager,,AUT
+bench,DF,Johan Vásquez,,MEX
+bench,MF,Bruno Fernandes,,POR
+bench,MF,Martin Baturina,,CRO
