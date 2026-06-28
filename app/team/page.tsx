@@ -80,16 +80,7 @@ export default function TeamPage() {
                 submittedAt: new Date(),
                 updatedAt: new Date(),
             });
-            await fetch('/api/export-squad-to-sheets', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    userCode: profile.code,
-                    roundId: round.id,
-                }),
-            });
+
             setValidationErrors([]);
             showAlert('Draft збережено');
         } finally {
