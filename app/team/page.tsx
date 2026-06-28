@@ -198,6 +198,42 @@ export default function TeamPage() {
               })
             : [];
 
+    function handleMoveBenchPlayer(index: number, direction: 'up' | 'down') {
+        if (!draft) return;
+
+        const playerId = draft.bench[index];
+        const player = players[playerId];
+
+        if (!player || player.position === 'GK') return;
+
+        const nextIndex = direction === 'up' ? index - 1 : index + 1;
+        const targetPlayerId = draft.bench[nextIndex];
+        const targetPlayer = targetPlayerId ? players[targetPlayerId] : null;
+
+        if (nextIndex < 0 || nextIndex >= draft.bench.length) return;
+
+        // GK у запасі не рухаємо і не даємо польовим стати перед ним
+        if (targetPlayer?.position === 'GK') return;
+
+        const nextBench = [...draft.bench];
+
+        [nextBench[index], nextBench[nextIndex]] = [
+            nextBench[nextIndex],
+            nextBench[index],
+        ];
+
+        setDraft({
+            ...draft,
+            bench: nextBench,
+        });
+
+        setSelectedSlot({
+            section: 'bench',
+            index: nextIndex,
+            playerId,
+        });
+    }
+
     function handleReplacePlayer(newPlayerId: string) {
         if (!draft || !selectedSlot || !round) return;
         console.log('round in handler', round);
@@ -504,6 +540,7 @@ export default function TeamPage() {
                                     Скасувати всі трансфери
                                 </button>
                             )}
+
                             {currentValidationErrors.length > 0 && (
                                 <div className="mb-3 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-200">
                                     <div className="mb-2 font-semibold text-amber-100">
@@ -541,6 +578,7 @@ export default function TeamPage() {
                         onReplace={handleReplacePlayer}
                         onSwapWithSquadPlayer={handleSwapWithSquadPlayer}
                         onSetCaptain={handleSetCaptain}
+                        onMoveBenchPlayer={handleMoveBenchPlayer}
                     />
                 )}
             </main>
@@ -651,6 +689,7 @@ function PlayerActionSheet({
     onReplace,
     onSwapWithSquadPlayer,
     onSetCaptain,
+    onMoveBenchPlayer,
 }: {
     selectedSlot: SelectedSlot;
     selectedPlayer: Player;
@@ -668,6 +707,7 @@ function PlayerActionSheet({
         targetSection: 'starters' | 'bench',
         targetIndex: number,
     ) => void;
+    onMoveBenchPlayer: (index: number, direction: 'up' | 'down') => void;
 }) {
     const [mode, setMode] = useState<'actions' | 'swap' | 'transfer'>(
         'actions',
@@ -788,6 +828,74 @@ function PlayerActionSheet({
                                     </button>
                                 </>
                             )}
+                            {selectedSlot.section === 'bench' &&
+                                selectedPlayer.position !== 'GK' && (
+                                    <>
+                                        {(() => {
+                                            const previousPlayerId =
+                                                draft.bench[
+                                                    selectedSlot.index - 1
+                                                ];
+                                            const nextPlayerId =
+                                                draft.bench[
+                                                    selectedSlot.index + 1
+                                                ];
+
+                                            const previousPlayer =
+                                                previousPlayerId
+                                                    ? players[previousPlayerId]
+                                                    : null;
+
+                                            const nextPlayer = nextPlayerId
+                                                ? players[nextPlayerId]
+                                                : null;
+
+                                            const canMoveUp =
+                                                selectedSlot.index > 0 &&
+                                                previousPlayer?.position !==
+                                                    'GK';
+
+                                            const canMoveDown =
+                                                selectedSlot.index <
+                                                    draft.bench.length - 1 &&
+                                                nextPlayer?.position !== 'GK';
+
+                                            return (
+                                                <>
+                                                    <button
+                                                        type="button"
+                                                        disabled={!canMoveUp}
+                                                        className="w-full rounded-xl bg-zinc-900 p-4 text-left font-semibold disabled:opacity-40"
+                                                        onClick={() =>
+                                                            onMoveBenchPlayer(
+                                                                selectedSlot.index,
+                                                                'up',
+                                                            )
+                                                        }
+                                                    >
+                                                        ↑ Підняти вище в порядку
+                                                        замін
+                                                    </button>
+
+                                                    <button
+                                                        type="button"
+                                                        disabled={!canMoveDown}
+                                                        className="w-full rounded-xl bg-zinc-900 p-4 text-left font-semibold disabled:opacity-40"
+                                                        onClick={() =>
+                                                            onMoveBenchPlayer(
+                                                                selectedSlot.index,
+                                                                'down',
+                                                            )
+                                                        }
+                                                    >
+                                                        ↓ Опустити нижче в
+                                                        порядку замін
+                                                    </button>
+                                                </>
+                                            );
+                                        })()}
+                                    </>
+                                )}
                             <button
                                 className="w-full rounded-xl bg-zinc-900 p-4 text-left font-semibold active:scale-[0.99]"
                                 onClick={() => setMode('swap')}
