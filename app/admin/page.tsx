@@ -14,7 +14,7 @@ import { PlayerScoreSheet } from '@/components/admin/PlayerScoreSheet';
 import type { PlayerScoreInput } from '@/types/playerScore';
 
 export default function AdminPage() {
-    const [secret, setSecret] = useState('');
+    const [savedPoints, setSavedPoints] = useState<Record<string, number>>({});
     const [isExporting, setIsExporting] = useState(false);
     const [message, setMessage] = useState('');
     const [selectedRoundId, setSelectedRoundId] = useState('round_116');
@@ -104,11 +104,14 @@ export default function AdminPage() {
                 { homeScore: number | null; awayScore: number | null }
             > = {};
 
+            const pointsMap: Record<string, number> = {};
+
             scoresSnap.forEach((scoreDoc) => {
                 const data = scoreDoc.data();
 
                 if (data.playerId && data.score) {
                     scoresMap[data.playerId] = data.score as PlayerScoreInput;
+                    pointsMap[data.playerId] = Number(data.points ?? 0);
                 }
 
                 if (data.matchId && data.match) {
@@ -118,6 +121,8 @@ export default function AdminPage() {
                     };
                 }
             });
+
+            setSavedPoints(pointsMap);
 
             setSavedScores(scoresMap);
             setSavedMatchScores(matchScoresMap);
@@ -233,7 +238,7 @@ export default function AdminPage() {
                 <div className="mt-4 space-y-3">
                     <button
                         type="button"
-                        disabled={isExporting || !secret}
+                        disabled={isExporting}
                         onClick={handleExportRound}
                         className="w-full rounded-xl bg-zinc-800 py-3 font-semibold"
                     >
@@ -242,7 +247,7 @@ export default function AdminPage() {
 
                     <button
                         type="button"
-                        disabled={isExporting || !secret}
+                        disabled={isExporting}
                         onClick={() => setRoundLock('round_116', true)}
                         className="w-full rounded-xl bg-red-600 py-3 font-semibold"
                     >
@@ -251,7 +256,7 @@ export default function AdminPage() {
 
                     <button
                         type="button"
-                        disabled={isExporting || !secret}
+                        disabled={isExporting}
                         onClick={() => setRoundLock('round_116', false)}
                         className="w-full rounded-xl bg-zinc-800 py-3 font-semibold"
                     >
@@ -260,7 +265,7 @@ export default function AdminPage() {
 
                     <button
                         type="button"
-                        disabled={isExporting || !secret}
+                        disabled={isExporting}
                         onClick={createRound18}
                         className="w-full rounded-xl bg-blue-600 py-3 font-semibold"
                     >
@@ -352,24 +357,43 @@ export default function AdminPage() {
                             </p>
                         ) : (
                             <div className="space-y-2">
-                                {matchPlayers.map((player) => (
-                                    <button
-                                        key={player.id}
-                                        type="button"
-                                        onClick={() =>
-                                            setSelectedPlayer(player)
-                                        }
-                                        className="w-full rounded-xl bg-zinc-800 p-3 text-left"
-                                    >
-                                        <div className="font-semibold text-white">
-                                            {player.name}
-                                        </div>
+                                {matchPlayers.map((player) => {
+                                    const points = savedPoints[player.id];
 
-                                        <div className="text-sm text-zinc-400">
-                                            {player.position} · {player.country}
-                                        </div>
-                                    </button>
-                                ))}
+                                    return (
+                                        <button
+                                            key={player.id}
+                                            type="button"
+                                            onClick={() =>
+                                                setSelectedPlayer(player)
+                                            }
+                                            className="flex w-full items-center justify-between rounded-xl bg-zinc-800 p-3 text-left"
+                                        >
+                                            <div>
+                                                <div className="font-semibold text-white">
+                                                    {player.name}
+                                                </div>
+
+                                                <div className="text-sm text-zinc-400">
+                                                    {player.position} ·{' '}
+                                                    {player.country}
+                                                </div>
+                                            </div>
+
+                                            <div className="text-right">
+                                                {points !== undefined ? (
+                                                    <span className="rounded-full bg-blue-600 px-3 py-1 text-sm font-bold text-white">
+                                                        {points}
+                                                    </span>
+                                                ) : (
+                                                    <span className="text-xs text-zinc-500">
+                                                        не заповнено
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         )}
                     </section>
@@ -429,6 +453,11 @@ export default function AdminPage() {
                                 homeScore: parsedHomeScore,
                                 awayScore: parsedAwayScore,
                             },
+                        }));
+
+                        setSavedPoints((previous) => ({
+                            ...previous,
+                            [selectedPlayer.id]: points,
                         }));
                     }}
                 />
