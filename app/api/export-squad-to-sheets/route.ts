@@ -137,6 +137,33 @@ export async function POST(request: Request) {
             },
         });
 
+        const transferOutRows = buildTransferSheetRows(
+            draft.transferOut,
+            players,
+        );
+        const transferInRows = buildTransferSheetRows(
+            draft.transferIn,
+            players,
+        );
+
+        await sheets.spreadsheets.values.update({
+            spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
+            range: `'${userCode}'!E81:M84`,
+            valueInputOption: 'USER_ENTERED',
+            requestBody: {
+                values: transferOutRows,
+            },
+        });
+
+        await sheets.spreadsheets.values.update({
+            spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
+            range: `'${userCode}'!P81:X84`,
+            valueInputOption: 'USER_ENTERED',
+            requestBody: {
+                values: transferInRows,
+            },
+        });
+
         return NextResponse.json({
             ok: true,
             message: 'Squad exported to Google Sheets',
@@ -152,4 +179,26 @@ export async function POST(request: Request) {
             { status: 500 },
         );
     }
+}
+
+function buildTransferSheetRows(
+    playerIds: string[],
+    players: Record<string, Player>,
+) {
+    return Array.from({ length: 4 }, (_, index) => {
+        const playerId = playerIds[index];
+        const player = playerId ? players[playerId] : null;
+
+        return [
+            player?.position ?? '', // E або P
+            player?.name ?? '', // F або Q
+            '', // G або R
+            '', // H або S
+            '', // I або T
+            '', // J або U
+            '', // K або V
+            '', // L або W
+            player?.country ?? '', // M або X
+        ];
+    });
 }

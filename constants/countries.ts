@@ -2,6 +2,7 @@ export const COUNTRIES: Record<string, { name: string; flag: string }> = {
     CZE: { name: 'Czechia', flag: 'cz' },
     MEX: { name: 'Mexico', flag: 'mx' },
     PAR: { name: 'Paraguay', flag: 'py' },
+    ZAF: { name: 'South Africa', flag: 'za' },
     KOR: { name: 'South Korea', flag: 'kr' },
     BIH: { name: 'Bosnia and Herzegovina', flag: 'ba' },
     CAN: { name: 'Canada', flag: 'ca' },
