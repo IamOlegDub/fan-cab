@@ -5,8 +5,7 @@ import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth, db } from '@/lib/firebase';
-
-const TEAM_CODES = ['OD', 'AD', 'CG', 'VM', 'BT', 'YS', 'RB', 'OM'];
+import { TEAM_CODES } from '@/constants/teamCodes';
 
 export default function ClaimTeamPage() {
     const router = useRouter();
